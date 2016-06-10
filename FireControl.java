@@ -1,11 +1,11 @@
 import javax.realtime.SchedulingParameters;
 import javax.realtime.ReleaseParameters;
 
-public class FireSensor extends Sensor
+public class FireControl extends Control
 {
 	protected int fire = 1;
 
-	public FireSensor(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
+	public FireControl(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
 	{
 		super(scheduling, release, ref);
 	}

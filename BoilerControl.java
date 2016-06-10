@@ -1,9 +1,9 @@
 import javax.realtime.SchedulingParameters;
 import javax.realtime.ReleaseParameters;
 
-public class BoilerSensor extends Sensor
+public class BoilerControl extends Control
 {
-	public BoilerSensor(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
+	public BoilerControl(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
 	{
 		super(scheduling, release, ref);
 	}

@@ -1,11 +1,11 @@
 import javax.realtime.SchedulingParameters;
 import javax.realtime.ReleaseParameters;
 
-public class HeatSensor extends Sensor
+public class HeatControl extends Control
 {
 	protected int heat = 0;
 
-	public HeatSensor(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
+	public HeatControl(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
 	{
 		super(scheduling, release, ref);
 	}

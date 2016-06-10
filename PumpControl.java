@@ -1,11 +1,11 @@
 import javax.realtime.SchedulingParameters;
 import javax.realtime.ReleaseParameters;
 
-public class PumpSensor extends Sensor
+public class PumpControl extends Control
 {
 	protected int force = 2;
 
-	public PumpSensor(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
+	public PumpControl(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
 	{
 		super(scheduling, release, ref);
 	}

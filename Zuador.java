@@ -1,7 +1,7 @@
 import javax.realtime.SchedulingParameters;
 import javax.realtime.ReleaseParameters;
 
-public class Zuador extends Sensor
+public class Zuador extends Control
 {
 	public Zuador(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
 	{

@@ -6,16 +6,16 @@ import javax.realtime.PeriodicParameters;
 import javax.realtime.RelativeTime;
 import javax.realtime.RealtimeThread;
 
-public class Sensor extends RealtimeThread
+public class Control extends RealtimeThread
 {
 	protected Boiler boiler;
 
-	public Sensor()
+	public Control()
 	{
 		super();
 	}
 
-	public Sensor(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
+	public Control(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
 	{
 		super(scheduling, release);
 		boiler = ref;
