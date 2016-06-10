@@ -5,9 +5,6 @@ Vinícius dos Santos
 
 ==============================
 
-	O trabalho atual é uma simplificação do problema ao implementar os atuadores/controladores 
-juntamente com os sensores, evitando um número elevado de classes e comunicação entre as mesmas.
-
 	O nosso modelo utiliza, até então, 5 tarefas, sendo elas:
 
 Periódicas:
@@ -29,29 +26,29 @@ Descrição das tarefas:
 
 	Transforma o valor de fogo em vapor, além de subtrair o nível de água da caldeira.
 
-	Início em:	100ms
-	Período:	200ms
+	Início em:	1s
+	Período:	2s
 
 * Sensor da Bomba de água
 
 	Adiciona água na caldeira.
 
-	Início em:	0ms
-	Período:	100ms
+	Início em:	0s
+	Período:	1s
 
 * Sensor de fogo
 
 	Configura o nível de fogo da caldeira.
 
-	Início em:	50ms
-	Período:	200ms
+	Início em:	0.5s
+	Período:	2s
 
 * Sensor da caldeira
 
 	Faz a leitura e impressão dos dados no terminal.
 
-	Início em:	0ms
-	Período:	100ms
+	Início em:	0s
+	Período:	2.2s
 
 * Zuador
 
