@@ -5,9 +5,13 @@ public class PumpControl extends Control
 {
 	protected int force = 2;
 
+	Sensor waterSensor;
+
 	public PumpControl(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
 	{
 		super(scheduling, release, ref);
+
+		waterSensor = new WaterSensor(ref);
 	}
 
 	public void run()
@@ -16,25 +20,27 @@ public class PumpControl extends Control
 		{
 			waitForNextPeriod();
 
-			if (boiler.getWater() > Boiler.maxlim || boiler.getWater() < Boiler.minlim)
+			if (waterSensor.getValue() > Boiler.maxlim || waterSensor.getValue() < Boiler.minlim)
 			{
 				break;
 			}
 
-			if (boiler.getWater() > Boiler.maxnorm)
+			if (waterSensor.getValue() > Boiler.maxnorm)
 			{
 				force = 1;
 			}
-			else if (boiler.getWater() > Boiler.normal)
+			else if (waterSensor.getValue() > Boiler.normal)
 			{
 				force = 2;
 			}
-			else if (boiler.getWater() > Boiler.minnorm)
+			else if (waterSensor.getValue() > Boiler.minnorm)
 			{
 				force = 6;
 			}
 
 			boiler.addWater(force);
+
+			System.out.println("Water Pump: Started");
 		}
 	}
 }

@@ -5,9 +5,13 @@ public class FireControl extends Control
 {
 	protected int fire = 1;
 
+	Sensor waterSensor;
+
 	public FireControl(SchedulingParameters scheduling, ReleaseParameters release, Boiler ref)
 	{
 		super(scheduling, release, ref);
+
+		waterSensor = new WaterSensor(ref);
 	}
 
 	public void run()
@@ -16,21 +20,23 @@ public class FireControl extends Control
 		{
 			waitForNextPeriod();
 
-			if (boiler.getWater() > Boiler.maxlim || boiler.getWater() < Boiler.minlim)
+			if (waterSensor.getValue() > Boiler.maxlim || waterSensor.getValue() < Boiler.minlim)
 			{
 				break;
 			}
 
-			if (boiler.getWater() > Boiler.maxnorm)
+			if (waterSensor.getValue() > Boiler.maxnorm)
 			{
 				fire = 5;
 			}
-			else if (boiler.getWater() < Boiler.minnorm)
+			else if (waterSensor.getValue() < Boiler.minnorm)
 			{
 				fire = 2;
 			}
 
 			boiler.setFire(fire);
+
+			System.out.println("Fire Control: Started");
 		}
 	}
 }
