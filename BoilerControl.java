@@ -30,6 +30,21 @@ public class BoilerControl extends Control
 
 			System.out.println("====================");
 
+			System.out.print("State: ");
+
+			if (waterSensor.getValue() > Boiler.maxnorm)
+			{
+				System.out.println("Degradado");
+			}
+			else if (waterSensor.getValue() > Boiler.normal)
+			{
+				System.out.println("Normal");
+			}
+			else
+			{
+				System.out.println("Degradado");
+			}
+
 			System.out.println("Water: " + waterSensor.getValue());
 			System.out.println("Fire: " + fireSensor.getValue());
 			System.out.println("Heat: " + heatSensor.getValue());
